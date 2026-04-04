@@ -8,7 +8,7 @@
 
 A full-stack **Java Spring Boot** web application for managing campus placements at PCCOER. It supports student registration & login, company listings, job applications, TNP admin management, and placement analytics — all deployed on Render with a PostgreSQL database.
 
-🔗 **Live Demo:** [https://college-placement-portal-rfka.onrender.com](https://college-placement-portal-rfka.onrender.com)
+🔗 **Live Demo:** [https://college-placement-portal-rfka.onrender.com](https://college-placement-portal-3i0d.onrender.com)
 
 ---
 
@@ -232,8 +232,8 @@ Every push to `main` triggers a new deployment automatically.
 ## 👩‍💻 Author
 
 **Sharayu Fugare** — PCCOER, Computer Engineering  
-[GitHub](https://github.com/sharayufugare)
-[GitHub](https://github.com/shaily0407)
+[Sharayu Fuagre GitHub](https://github.com/sharayufugare)
+[Shaily Gujarathi GitHub](https://github.com/shaily0407)
 
 
 ---
