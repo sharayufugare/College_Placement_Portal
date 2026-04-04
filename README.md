@@ -230,8 +230,6 @@ Every push to `main` triggers a new deployment automatically.
 ---
 
 ## 👩‍💻 Author
-
-**Sharayu Fugare** — PCCOER, Computer Engineering  
 [Sharayu Fuagre](https://github.com/sharayufugare)
 [Shaily Gujarathi](https://github.com/shaily0407)
 
