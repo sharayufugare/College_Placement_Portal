@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My Applications</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body{font-family:Arial;background:#f5f7fa}
+        .container{max-width:1000px;margin:auto;padding:30px}
+        table{width:100%;border-collapse:collapse;background:white}
+        th,td{padding:14px;border-bottom:1px solid #ddd}
+        th{background:#4361ee;color:white}
+        .status-pending{color:#b88a00}
+        .status-accepted{color:green}
+        .status-rejected{color:red}
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h2>📄 My Applications</h2>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Company</th>
+            <th>Status</th>
+            <th>Applied Date</th>
+        </tr>
+        </thead>
+        <tbody id="myApps"></tbody>
+    </table>
+</div>
+
+<script src="config.js"></script>
+<script>
+    const studentId = localStorage.getItem("studentId");
+    const studentToken = localStorage.getItem("token");
+
+    if (!studentId) {
+        alert("Please login first!");
+        window.location.href = "student_login.html";
+    }
+
+    fetch(apiUrl(`/student/applications/${studentId}`), {
+        headers: studentToken ? { "Authorization": "Bearer " + studentToken } : {}
+    })
+    .then(res => res.json())
+    .then(data => {
+        const tbody = document.getElementById("myApps");
+
+        if (data.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="3">No applications found</td></tr>`;
+            return;
+        }
+
+        data.forEach(app => {
+            let cls = "status-pending";
+            if (app.status.toLowerCase().includes("accept")) cls = "status-accepted";
+            if (app.status.toLowerCase().includes("select") || app.status.toLowerCase().includes("place")) cls = "status-accepted";
+            if (app.status.toLowerCase().includes("reject")) cls = "status-rejected";
+
+            tbody.innerHTML += `
+                <tr>
+                    <td>${app.companyName}</td>
+                    <td class="${cls}"><b>${app.status}</b></td>
+                    <td>${app.appliedDate}</td>
+                </tr>`;
+        });
+    });
+</script>
+</body>
+</html>
