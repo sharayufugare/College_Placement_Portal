@@ -328,6 +328,9 @@
     </form>
 
     <hr />
+    <div style="font-size: 0.8rem; text-align: center; color: #5f7f9e; margin-bottom: 8px;">
+      Already registered? <a href="tnp_admin_login.html" style="color: #2c7da0; font-weight: 600; text-decoration: none;">← Back to Login</a>
+    </div>
     <div style="font-size: 0.7rem; text-align: center; color: #5f7f9e;">
       ⚡ Official PCCOER TNP portal | Coordinator credentials will be verified
     </div>
@@ -467,9 +470,12 @@
 
         const data = await response.json();
         if (data.status === 'success') {
-          showStatus(`✅ Registration successful! Welcome, ${registrationData.full_name}. You are now registered as ${registrationData.role}.`, 'success');
+          showStatus(`✅ Registration successful! Welcome, ${registrationData.full_name}. Redirecting to login...`, 'success');
           form.reset();
           roleHidden.value = 'TNP Coordinator';
+          setTimeout(() => {
+            window.location.href = 'tnp_admin_login.html';
+          }, 2000);
           return true;
         }
 

@@ -526,7 +526,8 @@
 
         <div class="footer">
             <p><i class="fas fa-shield-alt"></i> Secure access · TNP Admin Cell only</p>
-            <p>Need assistance? <a href="#" id="supportLink"><i class="fas fa-headset"></i> Contact Support</a></p>
+            <p>New coordinator? <a href="tnp_registration.html"><i class="fas fa-user-plus"></i> Register here</a></p>
+            <p style="margin-top:6px;">Need assistance? <a href="#" id="supportLink"><i class="fas fa-headset"></i> Contact Support</a></p>
         </div>
     </div>
 </div>
@@ -654,12 +655,17 @@
             const data = await response.json();
             
             if (data.status === "success") {
-                // Success: store session info optionally
+                // Success: store session info
                 if (data.token) {
                     localStorage.setItem("tnp_admin_token", data.token);
                     document.cookie = `tnp_admin_token=${data.token};path=/`;
                 }
-                if (data.adminName) localStorage.setItem("admin_name", data.adminName);
+                if (data.admin && data.admin.username) {
+                    localStorage.setItem("admin_name", data.admin.username);
+                }
+                if (data.admin && data.admin.full_name) {
+                    localStorage.setItem("admin_full_name", data.admin.full_name);
+                }
                 
                 // Animated feedback before redirect
                 showFloatingMessage("Login successful! Redirecting to dashboard...", false);
