@@ -20,3 +20,4 @@ public class SecurityConfig {
 }
 */
 
+// CI trigger commit
