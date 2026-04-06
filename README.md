@@ -6,7 +6,7 @@
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-blue?logo=postgresql)](https://www.postgresql.org/)
 [![Deployed on Render](https://img.shields.io/badge/Deployed%20on-Render-46E3B7?logo=render)](https://college-placement-portal-rfka.onrender.com)
 
-A full-stack **Java Spring Boot** web application for managing campus placements at PCCOER. It supports student registration & login, company listings, job applications, TNP admin management, and placement analytics — all deployed on Render with a PostgreSQL database.
+A full-stack **Java Spring Boot** web application for managing campus placements at PCCOER. It supports student registration & login, company listings, job applications, TNP admin management,and placement analytics — all deployed on Render with a PostgreSQL database.
 
 🔗 **Live Demo:** [https://college-placement-portal-rfka.onrender.com](https://college-placement-portal-3i0d.onrender.com)
 
